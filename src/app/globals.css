@@ -26,3 +26,8 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+/* custom scroll  */
+::-webkit-scrollbar {
+  width: 3px; /* Độ rộng của thanh cuộn dọc */
+  height: 3px; /* Độ cao của thanh cuộn ngang */
+}

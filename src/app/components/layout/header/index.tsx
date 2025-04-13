@@ -7,7 +7,7 @@ import { ShoppingCartOutlined, UserOutlined } from "@ant-design/icons";
 const Header: React.FC = () => {
   return (
     <>
-      <header className="flex items-center justify-between bg-white my-2 px-3 py-2 gap-3 mx-5">
+      <header className="flex items-center justify-between bg-white px-3 py-2 gap-3  sticky top-0 z-10 w-full">
         <Link href="/" className="!ms-5 gap-2">
           <img src="/images/logo.webp" alt="logo" className="w-60" />
         </Link>
