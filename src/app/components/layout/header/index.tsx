@@ -1,29 +1,38 @@
-import React from "react";
 import Link from "next/link";
 import SearchBar from "./SearchBar";
 import Language from "./Language";
-import { Badge, Button } from "antd";
-import { ShoppingCartOutlined } from "@ant-design/icons";
+import { Avatar, Badge, Button } from "antd";
+import { ShoppingCartOutlined, UserOutlined } from "@ant-design/icons";
 
 const Header: React.FC = () => {
   return (
     <>
-      <header className="flex items-center justify-evenly bg-white m-2 p-3 gap-3">
-        <Link href="/">
-          <img src="/images/logo.webp" alt="logo" />
+      <header className="flex items-center justify-between bg-white my-2 px-3 py-2 gap-3 mx-5">
+        <Link href="/" className="!ms-5 gap-2">
+          <img src="/images/logo.webp" alt="logo" className="w-60" />
         </Link>
         <SearchBar />
-        <Language />
+        <div className="flex items-center justify-around gap-2">
+          <Language />
 
-        <Button color="default" variant="outlined">
-          Đăng nhập{" "}
-        </Button>
-        <Button type="default">
-          <Badge count={5}>
-            <ShoppingCartOutlined style={{ fontSize: 24 }} />
-          </Badge>
-          <p>Giỏ hàng</p>
-        </Button>
+          <button className="text-xl flex items-center gap-2 cursor-pointer  rounded-xl p-3">
+            <div className="flex items-center gap-2">
+              <Avatar size="large">
+                <UserOutlined />
+              </Avatar>
+              <div className="flex flex-col items-start text-sm ">
+                <p>Tài khoản</p>
+                <p className="font-semibold">Đăng nhập</p>
+              </div>
+            </div>
+          </button>
+          <button className="text-xl flex items-center gap-2 cursor-pointer  rounded-xl p-3">
+            <Badge count={5}>
+              <ShoppingCartOutlined style={{ fontSize: 24 }} />
+            </Badge>
+            <p className="text-[16px]">Giỏ hàng</p>
+          </button>
+        </div>
       </header>
     </>
   );
