@@ -7,7 +7,7 @@ import { ShoppingCartOutlined, UserOutlined } from "@ant-design/icons";
 const Header: React.FC = () => {
   return (
     <>
-      <header className="flex items-center justify-between bg-white px-3 py-2 gap-3  sticky top-0 z-10 w-full">
+      <header className="flex items-center justify-between bg-white px-3 py-2 gap-3  sticky top-0 z-10 w-full shadow-sm">
         <Link href="/" className="!ms-5 gap-2">
           <img src="/images/logo.webp" alt="logo" className="w-60" />
         </Link>
@@ -26,7 +26,7 @@ const Header: React.FC = () => {
               </div>
             </div>
           </button>
-          <button className="text-xl flex items-center gap-2 cursor-pointer  rounded-xl p-3">
+          <button className="text-xl flex items-center gap-2 cursor-pointer  rounded-xl p-3 ">
             <Badge count={5}>
               <ShoppingCartOutlined style={{ fontSize: 24 }} />
             </Badge>

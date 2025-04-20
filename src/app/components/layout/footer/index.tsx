@@ -4,7 +4,7 @@ import { FaFacebook, FaYoutube, FaTiktok, FaInstagram } from "react-icons/fa";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-100 px-12 py-14 text-black !text-xl">
+    <footer className="bg-gray-100 px-12 py-14 text-black !text-xl mt-4">
       <Row gutter={[32, 24]}>
         {/* Cột 1 - Thông tin cửa hàng */}
         <Col xs={24} md={12} lg={6}>
