@@ -3,7 +3,9 @@ import CountdownTimer from "./countdown-timer";
 import ProductCard from "../product-card";
 
 const PlashSale = () => {
-  const futureTime = new Date(Date.now() + 60 * 60 * 1000);
+  // Sử dụng một thời gian cố định thay vì tính toán mỗi lần render
+  const endTime = "2025-06-01T23:59:59";
+
   return (
     <div className="mt-4 flex flex-col w-full">
       <div className="flex flex-col bg-[#f96264] gap-8 mx-40 px-2 rounded-lg text-white">
@@ -17,13 +19,14 @@ const PlashSale = () => {
               <p className="font-bold">Sự kiện kết thúc sau</p>
             </div>
             <div className="flex justify-between items-center">
-              <CountdownTimer endTime={futureTime} />
+              <CountdownTimer endTime={endTime} />
             </div>
           </div>
         </div>
         <div className="flex flex-wrap gap-1 items-center justify-center">
           {Array.from({ length: 5 }).map((_, index) => (
             <ProductCard
+              key={`flash-sale-${index}`}
               img={[
                 "https://bizweb.dktcdn.net/thumb/large/100/527/383/products/upload-eb792ecb6ee3495181976026c8f7017d.jpg?v=1727669769057",
                 "https://bizweb.dktcdn.net/thumb/grande/100/527/383/products/upload-d2ccf62fb4394fbe8ca25e6f724d7eb5.jpg?v=1727669769057",
