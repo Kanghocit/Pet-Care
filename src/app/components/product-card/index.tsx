@@ -30,7 +30,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
   const text = <span>Xem nhanh</span>;
   return (
     <div
-      className={`w-75 border rounded-md p-3 shadow-sm hover:shadow-lg transition relative group bg-white my-2 ${className}`}
+      className={`w-75 rounded-md p-3 shadow-sm !min-h-[420px] hover:shadow-lg transition relative group bg-white my-2 ${className}`}
+      suppressHydrationWarning
     >
       <div className="relative w-full h-64 overflow-hidden group rounded-md">
         <img
@@ -51,9 +52,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
       </div>
 
       <div className="my-3">
-        <p className="text-black font-bold mb-1 line-clamp-2 group-hover:text-[#ffc226] cursor-pointer">
-          {title}
-        </p>
+        <div className="min-h-[50px]">
+          <p className="text-black font-bold mb-1 line-clamp-2 group-hover:text-[#ffc226] cursor-pointer">
+            {title}
+          </p>
+        </div>
 
         {/* Ant Design Rate */}
         <Rate

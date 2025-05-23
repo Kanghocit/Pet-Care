@@ -5,9 +5,14 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   children: React.ReactNode;
 };
 
-const Button = ({ variant = "default", children, className, ...props }: ButtonProps) => {
+const Button = ({
+  variant = "default",
+  children,
+  className,
+  ...props
+}: ButtonProps) => {
   const buttonClass = clsx(
-    "rounded-3xl min-w-[120px]  py-2 text-md font-bold",
+    "rounded-3xl min-w-[120px]  py-2 text-md font-bold px-2",
     variant === "default" &&
       "!bg-[#ff8662] text-white hover:!bg-[#ff8662]/80 cursor-pointer",
     variant === "outline" &&
