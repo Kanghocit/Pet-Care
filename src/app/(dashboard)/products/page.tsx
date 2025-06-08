@@ -1,8 +1,8 @@
 import React from "react";
-import BreadCumb from "@/app/components/breadCumb";
+import BreadCumb from "@/components/breadCumb";
 import ProductsFilter from "./components/products-filter";
-import Products from "@/app/components/products";
-import ProductCard from "@/app/components/product-card";
+import Products from "@/components/products";
+import ProductCard from "@/components/product-card";
 const ProductsPage = () => {
   return (
     <>
@@ -14,12 +14,7 @@ const ProductsPage = () => {
           </div>
           <div className="w-3/4">
             <h1 className="text-2xl font-bold mb-4">Danh sách sản phẩm</h1>
-            <ProductCard
-              title="Sản phẩm 1"
-              star={5}
-              price={100000}
-              img={["", ""]}
-            />
+            <ProductCard title="Sản phẩm 1" star={5} price={100000} />
             {/* Thêm nội dung trang sản phẩm ở đây */}
             hehehe
           </div>
