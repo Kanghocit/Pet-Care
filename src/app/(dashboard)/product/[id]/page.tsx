@@ -16,7 +16,7 @@ const ProductDetailPage = async ({
 
   return (
     <>
-      <div className="p-4 flex flex-col gap-4 max-w-screen-2xl mx-auto">
+      <div className="p-4 flex flex-col gap-4 container mx-auto">
         <BreadCumb />
         <div className="grid grid-cols-2 bg-[#f4f4f4] p-4 rounded-md mx-4 shadow-sm">
           <ProductDetailPicture

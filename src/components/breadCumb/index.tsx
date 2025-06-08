@@ -14,6 +14,7 @@ const BreadCumb: React.FC = () => {
       services: "Dịch vụ",
       orders: "Đơn hàng",
       profile: "Tài khoản",
+      contact: "Liên hệ",
       // Thêm các mapping khác ở đây
     };
 

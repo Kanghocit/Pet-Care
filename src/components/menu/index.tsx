@@ -24,7 +24,9 @@ const Menu = () => {
         Blog
       </li>
       <li className="flex items-center justify-center gap-2 cursor-pointer  hover:text-[#ffc902]">
-        <PhoneOutlined /> Liên hệ
+        <Link href="/contact">
+          <PhoneOutlined /> Liên hệ
+        </Link>
       </li>
     </ul>
   );
