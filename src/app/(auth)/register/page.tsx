@@ -1,19 +1,21 @@
 "use client";
 
 import React from "react";
-import { Checkbox, Form, Input } from "antd";
+import { Form, Input } from "antd";
 import { FacebookOutlined, GoogleOutlined } from "@ant-design/icons";
 import Button from "@/components/button";
 import Link from "next/link";
 import FloatingSquare from "@/components/floating-square";
 
-interface LoginFormValues {
+interface RegisterFormValues {
+  firstName: string;
+  lastName: string;
   email: string;
   password: string;
 }
 
-const LoginForm = () => {
-  const onFinish = (values: LoginFormValues) => {
+const RegisterForm = () => {
+  const onFinish = (values: RegisterFormValues) => {
     console.log("Form values:", values);
   };
 
@@ -22,12 +24,12 @@ const LoginForm = () => {
       {/* Hình vuông mờ di chuyển */}
       <FloatingSquare
         delay={0}
-        position={{ top: "15%", left: "35%" }}
+        position={{ top: "10%", left: "35%" }}
         zIndex={1}
       />
       <FloatingSquare
         delay={2}
-        position={{ top: "60%", left: "33%" }}
+        position={{ top: "60%", left: "35%" }}
         zIndex={30}
       />
       <FloatingSquare
@@ -37,7 +39,7 @@ const LoginForm = () => {
       />
       <FloatingSquare
         delay={4}
-        position={{ top: "75%", right: "35%" }}
+        position={{ top: "60%", right: "35%" }}
         zIndex={10}
       />
 
@@ -45,13 +47,35 @@ const LoginForm = () => {
 
       <div className="bg-white/80 rounded-3xl p-10 w-full max-w-xl shadow-2xl backdrop-blur-md border border-white/60 flex flex-col gap-3 z-10">
         <h1 className="text-3xl font-bold text-blue-700 mb-2 text-center font-[Quicksand]">
-          Đăng nhập
+          Đăng ký tài khoản
         </h1>
         <p className="text-base text-blue-500 mb-8 text-center">
-          🐾 Tái ngộ để yêu thương – đăng nhập ngay nhé!
+          🐾 “Chỉ vài giây để bắt đầu hành trình cùng thú cưng của bạn!”
         </p>
 
         <Form layout="vertical" onFinish={onFinish} className="space-y-2">
+          <Form.Item
+            name="firstName"
+            rules={[{ required: true, message: "Vui lòng nhập tên" }]}
+          >
+            <Input
+              placeholder="Tên"
+              autoComplete="off"
+              className="!rounded-full !px-4 !py-3 !bg-white  !border-none !font-semibold shadow-blue-50 shadow-2xl"
+            />
+          </Form.Item>
+
+          <Form.Item
+            name="lastName"
+            rules={[{ required: true, message: "Vui lòng nhập họ" }]}
+          >
+            <Input
+              placeholder="Họ"
+              autoComplete="off"
+              className="!rounded-full !px-4 !py-3 !bg-white !border-none !font-semibold shadow-blue-50 shadow-2xl"
+            />
+          </Form.Item>
+
           <Form.Item
             name="email"
             rules={[
@@ -80,20 +104,13 @@ const LoginForm = () => {
             />
           </Form.Item>
 
-          <div className="flex justify-between mx-2">
-            <Checkbox>Ghi nhớ mật khẩu</Checkbox>
-            <Link href="/forgot-password" className="text-blue-500">
-              Quên mật khẩu?
-            </Link>
-          </div>
-
           <Form.Item>
             <Button
               htmlType="submit"
               variant="default"
               className="w-full bg-gradient-to-r from-blue-400 to-cyan-400 text-white font-bold rounded-full py-3 px-4 shadow-lg hover:scale-101 transition"
             >
-              Đăng nhập
+              Đăng ký
             </Button>
           </Form.Item>
         </Form>
@@ -120,12 +137,12 @@ const LoginForm = () => {
           </Button>
         </div>
 
-        <Link href="/register">
+        <Link href="/login">
           <Button
             variant="none"
             className="w-full px-4 rounded-full bg-white !text-blue-600 hover:bg-blue-50 font-bold py-3 mb-2 shadow"
           >
-            Đăng ký
+            Đăng nhập
           </Button>
         </Link>
         <Link href="/">
@@ -141,4 +158,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default RegisterForm;
